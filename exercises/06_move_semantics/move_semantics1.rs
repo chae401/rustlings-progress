@@ -1,10 +1,10 @@
 // TODO: Fix the compiler error in this function.
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let vec = vec;
+    let mut vec = vec;  // 함수 인자로 넘어온 vec의 소유권을 받아서 가변으로 만든다.
 
     vec.push(88);
 
-    vec
+    vec // 변경된 vec의 소유권을 반환한다.
 }
 
 fn main() {

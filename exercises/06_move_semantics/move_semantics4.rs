@@ -9,9 +9,12 @@ mod tests {
     #[test]
     fn move_semantics4() {
         let mut x = Vec::new();
+
+        // Non-Lexical Lifetimes, NLL
         let y = &mut x;
+        y.push(42); // NLL 덕분에 y의 빌림 생명 주기는 이 시점에서 끝난다.
+
         let z = &mut x;
-        y.push(42);
         z.push(13);
         assert_eq!(x, [42, 13]);
     }
