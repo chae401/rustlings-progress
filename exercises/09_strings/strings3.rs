@@ -1,13 +1,21 @@
 fn trim_me(input: &str) -> &str {
     // TODO: Remove whitespace from both ends of a string.
+    input.trim()
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this.
+    // format!("{} world!", input) // https://rust-lang.github.io/rust-clippy/master/index.html#uninlined_format_args
+    format!("{input} world!")
+
+    // let mut s = input.to_string();
+    // s.push_str(" world!");
+    // s
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
+    input.replace("cars", "balloons")
 }
 
 fn main() {
