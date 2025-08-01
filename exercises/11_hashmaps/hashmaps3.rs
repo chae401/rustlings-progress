@@ -31,6 +31,18 @@ fn build_scores_table(results: &str) -> HashMap<&str, TeamScores> {
         // Keep in mind that goals scored by team 1 will be the number of goals
         // conceded by team 2. Similarly, goals scored by team 2 will be the
         // number of goals conceded by team 1.
+        
+        // let team_1_entry = scores.entry(team_1_name).or_insert_with(Default::default);
+        let team_1_entry = scores.entry(team_1_name).or_default(); //  가변 참조(&mut TeamScores)를 반환
+        team_1_entry.goals_scored += team_1_score;
+        team_1_entry.goals_conceded += team_2_score;
+
+        // Team 2 scores update
+        // team_2_name에 대한 TeamScores를 가져오거나 새로 삽입합니다.
+        // let team_2_entry = scores.entry(team_2_name).or_insert_with(Default::default);
+        let team_2_entry = scores.entry(team_2_name).or_default();
+        team_2_entry.goals_scored += team_2_score;
+        team_2_entry.goals_conceded += team_1_score;
     }
 
     scores
