@@ -9,7 +9,7 @@ Rust uses the `print!` and `println!` macros to print text to the console.
 
 ---
 
-## 📣 Rust의 `print!` / `println!`과 매크로 개념 정리
+## Rust의 `print!` / `println!`과 매크로 개념 정리
 
 ### 1. `print!`, `println!`이란?
 
