@@ -6,6 +6,10 @@ trait AppendBar {
 
 impl AppendBar for String {
     // TODO: Implement `AppendBar` for the type `String`.
+    fn append_bar(self) -> Self {
+        self + "Bar" // self의 소유권을 이동시키고 새로운 String을 반환
+        // format!("{self}Bar") // self를 참조하여 새로운 String을 생성
+    }
 }
 
 fn main() {
